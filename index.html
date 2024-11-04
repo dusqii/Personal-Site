@@ -59,12 +59,10 @@
         .main-window {
             width: 50%;
             height: 50vh;
-            /* Change from a percentage to a viewport height for consistency */
             top: 20%;
             left: 10%;
             padding: 20px;
             overflow: hidden;
-            /* Prevents scrolling */
         }
 
         #mainWindow .window-content {
@@ -93,22 +91,17 @@
         .rukia-gif {
             position: absolute;
             top: 278;
-            /* Move to the top */
             right: -20;
-            /* Align to the right */
             border-top: 3px solid white;
             border-left: 3px solid white;
             width: 150px;
-            /* Adjust the size as needed */
             height: auto;
         }
 
         .side-window {
             background-color: #c0c0c0;
             height: 260px;
-            /* Set a specific height */
             width: 130px;
-            /* Set a specific width */
             top: 10%;
             right: 27%;
             padding: 10px;
@@ -127,11 +120,8 @@
 
         #gifWindow {
             width: 20vw;
-            /* Adjust to a percentage of viewport width */
             max-width: 300px;
-            /* Limit maximum width */
             height: auto;
-            /* Auto height for proportional scaling */
         }
 
         #gifWindow img {
@@ -158,23 +148,97 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            /* This will center the icons */
             padding: 0 10px;
             box-shadow: 0 -2px 5px #000;
+        }
+
+        .taskbar img:hover {
+            transform: scale(1.3);
+            transition: transform 0.3s ease;
+        }
+
+        .music-player {
+            padding: 15px;
+            background: #c0c0c0;
+        }
+
+        .player-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .station-image {
+            width: 60px;
+            height: 60px;
+            margin-right: 15px;
+            border: 2px solid #808080;
+        }
+
+        .station-info h3 {
+            margin: 0;
+            font-size: 16px;
+            font-family: "subset-Tahoma";
+        }
+
+        .station-info p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            color: #444;
+        }
+
+        .player-controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background: #d4d0c8;
+            border: 2px inset #fff;
+        }
+
+        .control-btn {
+            background: #c0c0c0;
+            border: 2px outset #fff;
+            padding: 5px 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .control-btn:active {
+            border-style: inset;
+        }
+
+        .control-btn img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .volume-control img {
+            width: 20px;
+            height: 20px;
+        }
+
+        #volumeSlider {
+            width: 100px;
+            height: 20px;
         }
 
         .taskbar img {
             width: 30px;
             height: 30px;
             margin-right: 10px;
-            cursor: pointer;
         }
 
         .taskbar-miniplayer {
             display: flex;
             align-items: center;
-            margin-left: auto;
-            /* Pushes the player to the right side */
         }
 
         .taskbar-miniplayer button {
@@ -186,11 +250,6 @@
             margin-left: 10px;
             cursor: pointer;
         }
-
-        .taskbar-miniplayer button:hover {
-            background-color: #000099;
-        }
-
 
         #socials img {
             height: auto;
@@ -254,9 +313,7 @@
         a img:hover,
         a li:hover {
             transform: scale(1.1);
-            /* Increases size to 110% */
             transition: transform 0.3s ease;
-            /* Smooth transition */
         }
     </style>
 </head>
@@ -432,32 +489,63 @@
             </ul>
         </div>
     </div>
-
+    <div class="window extra-window" id="musicWindow" style="top: 60%; left: 70%; width: 300px;">
+        <div class="window-header" id="musicWindowHeader">
+            <span>music-player.exe</span>
+            <button onclick="closeWindow('musicWindow')">
+                <img src="images/windows95x.png" style="height: 20px; width: 22px" />
+            </button>
+        </div>
+        <div class="window-content music-player">
+            <div class="player-info">
+                <img src="https://plaza.one/icons/apple-touch-icon.png?v=2208042" alt="Plaza Radio"
+                    class="station-image" />
+                <div class="station-info">
+                    <h3>Nightwave Plaza</h3>
+                    <p>24/7 Vaporwave Radio</p>
+                </div>
+            </div>
+            <div class="player-controls">
+                <button class="control-btn" onclick="togglePlay()" id="playPauseBtn">
+                    <img src="images/playpause.svg" alt="Play/Pause" id="playPauseIcon" />
+                </button>
+                <div class="volume-control">
+                    <img src="images/volume.svg" alt="Volume" />
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1" />
+                </div>
+            </div>
+            <audio id="radioPlayer" src="http://radio.plaza.one/mp3" preload="none"></audio>
+        </div>
+    </div>
     <div class="footer-text">
         Use the buttons on the taskbar below to navigate
     </div>
 
     <div class="taskbar">
-        <img src="images/main.png" alt="Main Window" height="30" onclick="openWindow('mainWindow')" src="" width="30" />
-        <img src="images/groupadd.png" alt="Side Window" height="30" onclick="openWindow('sideWindow')" src=""
-            width="30" />
-        <img src="images/desc.png" alt="About Window" height="30" onclick="openWindow('about-window')" src=""
-            width="30" />
-        <img src="images/preferences.png" alt="Preferences Window" height="30" onclick="openWindow('stuffILikeWindow')"
-            src="" width="30" />
-        <img src="images/sunset.png" alt="Gif Window 2" height="30" onclick="openWindow('gifWindow')" src=""
-            width="30" />
-        <img src="images/toolbox.png" alt="Usefuls" height="30" onclick="openWindow('extraWindow4')" src=""
-            width="30" />
-        <img src="images/favorites.png" alt="favorite online stuffs" height="30" onclick="openWindow('extraWindow5')"
-            src="" width="30" />
-        <div class="taskbar-miniplayer">
-            <button class="play-button" onclick="togglePlay()" style="font-size:20;"><img src="images/musicnote.svg"
-                    style="" /></button>
-            <audio id="radioPlayer" src="http://radio.plaza.one/mp3" preload="none"></audio>
+        <div class="taskbarbuttons">
+            <img src="images/main.png" class="taskbarbutton" alt="Main Window" height="30"
+                onclick="openWindow('mainWindow')" width="30" />
+            <img src="images/groupadd.png" class="taskbarbutton" alt="Side Window" height="30" onclick="openWindow('sideWindow')"
+                width="30" />
+            <img src="images/desc.png" class="taskbarbutton" alt="About Window" height="30"
+                onclick="openWindow('about-window')" width="30" />
+            <img src="images/preferences.png" class="taskbarbutton" alt="Preferences Window" height="30"
+                onclick="openWindow('stuffILikeWindow')" width="30" />
+            <img src="images/sunset.png" class="taskbarbutton" alt="Gif Window" height="30"
+                onclick="openWindow('gifWindow')" width="30" />
+            <img src="images/toolbox.png" class="taskbarbutton" alt="Usefuls" height="30"
+                onclick="openWindow('extraWindow4')" width="30" />
+            <img src="images/favorites.png" class="taskbarbutton" alt="favorite online stuffs" height="30"
+                onclick="openWindow('extraWindow5')" width="30" />
+            <img src="images/musicnote.svg" class="taskbarbutton" alt="Main Window" height="30"
+                onclick="openWindow('musicWindow')" width="30" />
+        </div>
+        <div class="taskbar-clock" style="margin-left:auto;">
+            <iframe src="https://free.timeanddate.com/clock/i9mcz53j/n805/fcfff/tct/pct/tt0/tb4" frameborder="0"
+                width="213" height="36" allowtransparency="true"></iframe>
         </div>
         <script>
-            // Function to make the window draggable
+            // Function to make the windows draggable
             function dragElement(el) {
                 var pos1 = 0,
                     pos2 = 0,
@@ -480,7 +568,6 @@
                     pos2 = pos4 - e.clientY;
                     pos3 = e.clientX;
                     pos4 = e.clientY;
-                    // Only move the window, do not change its size
                     el.style.top = el.offsetTop - pos2 + "px";
                     el.style.left = el.offsetLeft - pos1 + "px";
                 }
@@ -523,7 +610,7 @@
                     playButton.textContent = 'Play';
                 }
             }
-
+        </script>
 </body>
 
 </html>
