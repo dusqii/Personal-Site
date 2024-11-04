@@ -88,16 +88,6 @@
             margin-right: -20px;
         }
 
-        .rukia-gif {
-            position: absolute;
-            top: 278;
-            right: -20;
-            border-top: 3px solid white;
-            border-left: 3px solid white;
-            width: 150px;
-            height: auto;
-        }
-
         .side-window {
             background-color: #c0c0c0;
             height: 260px;
@@ -138,7 +128,42 @@
             font-family: "Courier New", Courier, monospace;
         }
 
+        @media screen and (max-width: 768px) {
+
+            .taskbar-clock {
+
+                display: none;
+
+            }
+
+
+
+            .taskbar-right {
+
+                display: none;
+
+            }
+
+
+
+            .taskbar-left {
+
+                flex: 0;
+
+            }
+
+
+
+            .taskbar-center {
+
+                flex: 1;
+
+            }
+
+        }
+
         .taskbar {
+            justify-content: center;
             background-color: #000080;
             color: white;
             position: absolute;
@@ -147,9 +172,33 @@
             height: 40px;
             display: flex;
             align-items: center;
-            justify-content: center;
             padding: 0 10px;
             box-shadow: 0 -2px 5px #000;
+        }
+
+        .taskbar-left {
+            flex: 1;
+        }
+
+        .taskbar-center {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .taskbarbuttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .taskbar-right {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
         }
 
         .taskbar img:hover {
@@ -332,7 +381,7 @@
                 <p>My name is Jamie, regardless of how you've found my website, welcome.</p>
             </div>
             <sub class="bottomtext">Made with ♡︎ by Jamie</sub>
-            <img src="images/rukia.gif" alt="Rukia" class="rukia-gif" />
+            <img src="images/plinK.gif" alt="plinK">
         </div>
     </div>
 
@@ -522,95 +571,99 @@
     </div>
 
     <div class="taskbar">
-        <div class="taskbarbuttons">
-            <img src="images/main.png" class="taskbarbutton" alt="Main Window" height="30"
-                onclick="openWindow('mainWindow')" width="30" />
-            <img src="images/groupadd.png" class="taskbarbutton" alt="Side Window" height="30" onclick="openWindow('sideWindow')"
-                width="30" />
-            <img src="images/desc.png" class="taskbarbutton" alt="About Window" height="30"
-                onclick="openWindow('about-window')" width="30" />
-            <img src="images/preferences.png" class="taskbarbutton" alt="Preferences Window" height="30"
-                onclick="openWindow('stuffILikeWindow')" width="30" />
-            <img src="images/sunset.png" class="taskbarbutton" alt="Gif Window" height="30"
-                onclick="openWindow('gifWindow')" width="30" />
-            <img src="images/toolbox.png" class="taskbarbutton" alt="Usefuls" height="30"
-                onclick="openWindow('extraWindow4')" width="30" />
-            <img src="images/favorites.png" class="taskbarbutton" alt="favorite online stuffs" height="30"
-                onclick="openWindow('extraWindow5')" width="30" />
-            <img src="images/musicnote.svg" class="taskbarbutton" alt="Main Window" height="30"
-                onclick="openWindow('musicWindow')" width="30" />
+        <div class="taskbar-left"></div>
+        <div class="taskbar-center">
+            <div class="taskbarbuttons">
+                <img src="images/main.png" class="taskbarbutton" alt="Main Window" height="30"
+                    onclick="openWindow('mainWindow')" width="30" />
+                <img src="images/groupadd.png" class="taskbarbutton" alt="Side Window" height="30"
+                    onclick="openWindow('sideWindow')" width="30" />
+                <img src="images/desc.png" class="taskbarbutton" alt="About Window" height="30"
+                    onclick="openWindow('about-window')" width="30" />
+                <img src="images/preferences.png" class="taskbarbutton" alt="Preferences Window" height="30"
+                    onclick="openWindow('stuffILikeWindow')" width="30" />
+                <img src="images/sunset.png" class="taskbarbutton" alt="Gif Window" height="30"
+                    onclick="openWindow('gifWindow')" width="30" />
+                <img src="images/toolbox.png" class="taskbarbutton" alt="Usefuls" height="30"
+                    onclick="openWindow('extraWindow4')" width="30" />
+                <img src="images/favorites.png" class="taskbarbutton" alt="favorite online stuffs" height="30"
+                    onclick="openWindow('extraWindow5')" width="30" />
+                <img src="images/musicnote.svg" class="taskbarbutton" alt="Main Window" height="30"
+                    onclick="openWindow('musicWindow')" width="30" />
+            </div>
         </div>
-        <div class="taskbar-clock" style="margin-left:auto;">
-            <iframe src="https://free.timeanddate.com/clock/i9mcz53j/n805/fcfff/tct/pct/tt0/tb4" frameborder="0"
-                width="213" height="36" allowtransparency="true"></iframe>
+        <div class="taskbar-right">
+            <iframe class="taskbar-clock" src="https://free.timeanddate.com/clock/i9mcz53j/n805/fcfff/tct/pct/tt0/tb4"
+                frameborder="0" width="213" height="36" allowtransparency="true"></iframe>
         </div>
-        <script>
-            // Function to make the windows draggable
-            function dragElement(el) {
-                var pos1 = 0,
-                    pos2 = 0,
-                    pos3 = 0,
-                    pos4 = 0;
+    </div>
+    <script>
+        // Function to make the windows draggable
+        function dragElement(el) {
+            var pos1 = 0,
+                pos2 = 0,
+                pos3 = 0,
+                pos4 = 0;
 
-                function dragMouseDown(e) {
-                    e = e || window.event;
-                    e.preventDefault();
-                    pos3 = e.clientX;
-                    pos4 = e.clientY;
-                    document.onmouseup = closeDragElement;
-                    document.onmousemove = elementDrag;
-                }
-
-                function elementDrag(e) {
-                    e = e || window.event;
-                    e.preventDefault();
-                    pos1 = pos3 - e.clientX;
-                    pos2 = pos4 - e.clientY;
-                    pos3 = e.clientX;
-                    pos4 = e.clientY;
-                    el.style.top = el.offsetTop - pos2 + "px";
-                    el.style.left = el.offsetLeft - pos1 + "px";
-                }
-
-                function closeDragElement() {
-                    document.onmouseup = null;
-                    document.onmousemove = null;
-                }
-
-                el.querySelector(".window-header").onmousedown = dragMouseDown;
+            function dragMouseDown(e) {
+                e = e || window.event;
+                e.preventDefault();
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                document.onmousemove = elementDrag;
             }
 
-            // Initialize draggable windows
-            window.onload = function () {
-                const windows = document.querySelectorAll(".window");
-                windows.forEach((window) => {
-                    dragElement(window);
-                });
-            };
-
-            // Function to close windows
-            function closeWindow(windowId) {
-                document.getElementById(windowId).style.display = "none";
+            function elementDrag(e) {
+                e = e || window.event;
+                e.preventDefault();
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                el.style.top = el.offsetTop - pos2 + "px";
+                el.style.left = el.offsetLeft - pos1 + "px";
             }
 
-            // Function to open windows
-            function openWindow(windowId) {
-                document.getElementById(windowId).style.display = "block";
+            function closeDragElement() {
+                document.onmouseup = null;
+                document.onmousemove = null;
             }
 
-            const radioPlayer = document.getElementById('radioPlayer');
-            const playButton = document.querySelector('.play-button');
+            el.querySelector(".window-header").onmousedown = dragMouseDown;
+        }
 
-            function togglePlay() {
-                if (radioPlayer.paused) {
-                    radioPlayer.play();
-                    playButton.textContent = 'Pause';
-                } else {
-                    radioPlayer.pause();
-                    playButton.textContent = 'Play';
-                }
+        // Initialize draggable windows
+        window.onload = function () {
+            const windows = document.querySelectorAll(".window");
+            windows.forEach((window) => {
+                dragElement(window);
+            });
+        };
+
+        // Function to close windows
+        function closeWindow(windowId) {
+            document.getElementById(windowId).style.display = "none";
+        }
+
+        // Function to open windows
+        function openWindow(windowId) {
+            document.getElementById(windowId).style.display = "block";
+        }
+
+        const radioPlayer = document.getElementById('radioPlayer');
+        const playButton = document.querySelector('.play-button');
+
+        function togglePlay() {
+            if (radioPlayer.paused) {
+                radioPlayer.play();
+                playButton.textContent = 'Pause';
+            } else {
+                radioPlayer.pause();
+                playButton.textContent = 'Play';
             }
-        </script>
+        }
+    </script>
 </body>
 
 </html>
