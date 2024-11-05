@@ -19,7 +19,7 @@
             color: black;
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            overflow:auto;
         }
 
         .window {
@@ -126,6 +126,57 @@
             width: 100%;
             text-align: center;
             font-family: "Courier New", Courier, monospace;
+        }
+
+        @media screen and (max-width: 1200px) {
+            .main-window {
+                width: 60%;
+                height: 60vh;
+            }
+
+            .side-window {
+                width: 150px;
+                height: 300px;
+            }
+
+            .extra-window {
+                width: 300px;
+                height: 400px;
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            .main-window {
+                width: 70%;
+                height: 70vh;
+            }
+
+            .side-window {
+                width: 120px;
+                height: 250px;
+            }
+
+            .extra-window {
+                width: 250px;
+                height: 350px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .main-window {
+                width: 80%;
+                height: 80vh;
+            }
+
+            .side-window {
+                width: 100px;
+                height: 200px;
+            }
+
+            .extra-window {
+                width: 200px;
+                height: 300px;
+            }
         }
 
         @media screen and (max-width: 768px) {
@@ -300,6 +351,12 @@
             cursor: pointer;
         }
 
+        #socials {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            margin-left:-2em
+        }
+
         #socials img {
             height: auto;
             width: 50px;
@@ -307,20 +364,19 @@
         }
 
         h1 {
-            font-size: 3em;
+            font-size: 2.5em;
         }
 
         p {
-            font-size: 1.5em;
+            font-size: 1.2em;
         }
 
         ul {
-            list-style-type: none;
-            padding: 0;
+            font-size: 1em;
         }
 
         li {
-            font-size: 1.2em;
+            font-size: 0.9em;
         }
 
         button {
@@ -394,7 +450,7 @@
             </button>
         </div>
         <div class="window-content">
-            <ul id="socials">
+            <ul id="socials" style="list-style-type: none;">
                 <li>
                     <a href="https://discordapp.com/users/614563014506578070"><img src="images/discord.png" /></a><a
                         href="https://steamcommunity.com/id/transfemininegaming"><img src="images/steam.png" /></a>
@@ -427,7 +483,7 @@
                 <h1>Here's some about me</h1>
                 <img src="images/cirno.gif" alt="cirno spinny" style="width: 10vw; height: auto; margin-left: 20px" />
             </div>
-            <ul>
+            <ul style="list-style-type: none;">
                 <li>- She/Her, ISFP-T, Minor</li>
                 <li>- I live in Midwestern America, my timezone is EST.</li>
                 <li>- I do stupid things in games</li>
@@ -529,7 +585,7 @@
         </div>
         <div class="window-content">
             <h1>Stuff I've Done/Am Doing: </h1>
-            <ul>
+            <ul style="list-style-type: none;">
                 <li><img src="images/checkboxfilled.svg" />CIW Site Development Associate</li>
                 <li><img src="images/checkboxempty.svg" />CIW Internet Business Associate</li>
                 <li><img src="images/checkboxempty.svg" />CIW Network Technology Certificate</li>
