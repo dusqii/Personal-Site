@@ -19,7 +19,7 @@
             color: black;
             margin: 0;
             padding: 0;
-            overflow:auto;
+            overflow: auto;
         }
 
         .window {
@@ -213,6 +213,22 @@
 
         }
 
+        @media (max-width: 768px) {
+            .draggable-windows {
+                cursor: grab;
+                /* or cursor: move */
+            }
+        }
+
+        @media (max-width: 768px) {
+            #taskbar {
+                font-size: 18px;
+                /* adjust the value as needed */
+                padding: 10px;
+                /* adjust the value as needed */
+            }
+        }
+
         .taskbar {
             justify-content: center;
             background-color: #000080;
@@ -354,7 +370,7 @@
         #socials {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            margin-left:-2em
+            margin-left: -2em
         }
 
         #socials img {
