@@ -436,6 +436,10 @@
             transform: scale(1.1);
             transition: transform 0.3s ease;
         }
+
+        .element {
+            transform: translateX(0px) translateY(0px);
+        }
     </style>
 </head>
 
@@ -735,6 +739,32 @@
                 playButton.textContent = 'Play';
             }
         }
+
+        element.addEventListener('touchstart', handleTouchStart);
+        element.addEventListener('touchmove', handleTouchMove);
+        element.addEventListener('touchend', handleTouchEnd);
+
+        const element = document.getElementById('draggable');
+
+        let isDown = false;
+        let offset = [0, 0];
+
+        element.addEventListener('touchstart', (e) => {
+            isDown = true;
+            offset = [element.offsetLeft - e.touches[0].clientX, element.offsetTop - e.touches[0].clientY];
+        });
+
+        element.addEventListener('touchmove', (e) => {
+            if (isDown) {
+                const x = e.touches[0].clientX + offset[0];
+                const y = e.touches[0].clientY + offset[1];
+                element.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            }
+        });
+
+        element.addEventListener('touchend', () => {
+            isDown = false;
+        });
     </script>
 </body>
 
