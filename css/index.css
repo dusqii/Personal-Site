@@ -1,5 +1,13 @@
 @charset "utf-8";
 
+/*font*/
+
+.Mali {
+    font-family: "Mali", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
 /* styles.css */
 body {
     background-color: rgb(32, 37, 48);
