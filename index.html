@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -19,9 +20,7 @@
         background-size: cover;
         background-repeat: no-repeat;
     }
-</style>
 
-<style>
     .main-window>.window-content>* {
         margin-block: 0;
     }
@@ -29,7 +28,7 @@
 </head>
 
 <body style="margin: 0; padding: 0; overflow: hidden;">
-    <div class="window main-window" id="mainWindow">
+    <div class="window main-window" id="mainWindow" style="width: fit-content; height: fit-content;">
         <div class="window-header" id="mainWindowHeader">
             <span>welcome-img.pdf</span>
             <button onclick="closeWindow('mainWindow')">
@@ -42,6 +41,7 @@
                 <p style="font-size: 2vh;">My name is Jamie, regardless of how you've found my website, welcome.</p>
             </div>
             <img src="images/plinK.gif" alt="plinK" style="width: 30vw; height: auto;">
+            
         </div>
     </div>
 
@@ -91,7 +91,7 @@
         </div>
     </div>
 
-    <div class="window extra-window" id="about-window" style="top: 20%; left: 20%">
+    <div class="window extra-window" id="about-window" style="top: 20%; left: 20%; width: fit-content; height: fit-content;">
         <div class="window-header" id="extraWindowHeader1">
             <span>aboutme.rtf</span>
             <button onclick="closeWindow('about-window')">
@@ -144,15 +144,15 @@
         </div>
     </div>
 
-    <div class="window" id="gifWindow" style="top: 45%; left: 65%;">
+    <div class="window" id="gifWindow" style="top: 45%; left: 65%; overflow:hidden;">
         <div class="window-header" id="extraWindowHeader3">
-            <span>yokohamasunset.gif</span>
+            <span>sun.gif</span>
             <button onclick="closeWindow('gifWindow')">
                 <img src="images/windows95x.png" style="height: 1.3em; width: 1.4em" />
             </button>
         </div>
         <div class="window-content">
-            <img src="images/gif.gif" />
+            <img src="images/gif.gif"/>
         </div>
     </div>
 
