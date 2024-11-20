@@ -45,7 +45,7 @@
         </div>
     </div>
 
-    <div class="window side-window" id="sideWindow" style="width: fit-content; height: fit-content;">
+    <div class="window side-window extra-window" id="sideWindow" style="width: fit-content; height: fit-content;">
         <div class="window-header" id="sideWindowHeader">
             <span>socials.html</span>
             <button onclick="closeWindow('sideWindow')">
@@ -145,7 +145,7 @@
         </div>
     </div>
 
-    <div class="window" id="gifWindow" style="top: 45%; left: 65%; overflow:hidden;">
+    <div class="window extra-window" id="gifWindow" style="top: 45%; left: 65%; overflow:hidden;">
         <div class="window-header" id="extraWindowHeader3">
             <span>sun.gif</span>
             <button onclick="closeWindow('gifWindow')">
@@ -243,33 +243,70 @@
             <audio id="radioPlayer" src="http://radio.plaza.one/mp3" preload="none"></audio>
         </div>
     </div>
-    <div class="footer-text">
-        Use the buttons on the taskbar below to navigate
+
+    <div class="popup">
+        <div class="window-header" id="extraWindowHeader5">
+            <span>achievements.docx</span>
+            <button onclick="closeWindow('extraWindow5')">
+                <img src="images/windows95x.png" style="height: 1.3em; width: 1.4em" />
+            </button>
+        </div>
+        <strong>Use the buttons on the taskbar below to navigate</strong>
+        <button style="background-color: green; color: white; padding: 0.25rem 0.5rem; cursor: pointer;" onclick="document.querySelector('.popup').remove();">
+            Ok
+        </button>
     </div>
+
+
+    <script>
+        document.querySelector('.footer-text button').addEventListener('click', () => {
+            document.querySelector('.footer-text').style.display = 'none';
+        });
+    </script>
 
     <div class="taskbar">
         <div class="taskbar-left"></div>
         <div class="taskbar-center">
             <div class="taskbarbuttons">
                 <img src="images/main.png" class="taskbarbutton" alt="Main Window" style="height: 3vh; width: 3vh;"
-                    onclick="openWindow('mainWindow')" />
+                    onclick="toggleWindow('mainWindow', this)" />
                 <img src="images/groupadd.png" class="taskbarbutton" alt="Side Window" style="height: 3vh; width: 3vh;"
-                    onclick="openWindow('sideWindow')" />
+                    onclick="toggleWindow('sideWindow', this)" />
                 <img src="images/desc.png" class="taskbarbutton" alt="About Window" style="height: 3vh; width: 3vh;"
-                    onclick="openWindow('about-window')" />
+                    onclick="toggleWindow('about-window', this)" />
                 <img src="images/preferences.png" class="taskbarbutton" alt="Preferences Window"
-                    style="height: 3vh; width: 3vh;" onclick="openWindow('stuffILikeWindow')" />
+                    style="height: 3vh; width: 3vh;" onclick="toggleWindow('stuffILikeWindow', this)" />
                 <img src="images/sunset.png" class="taskbarbutton" alt="Gif Window" style="height: 3vh; width: 3vh;"
-                    onclick="openWindow('gifWindow')" />
+                    onclick="toggleWindow('gifWindow', this)" />
                 <img src="images/toolbox.png" class="taskbarbutton" alt="Usefuls" style="height: 3vh; width: 3vh;"
-                    onclick="openWindow('extraWindow4')" />
+                    onclick="toggleWindow('extraWindow4', this)" />
                 <img src="images/favorites.png" class="taskbarbutton" alt="favorite online stuffs"
-                    style="height: 3vh; width: 3vh;" onclick="openWindow('extraWindow5')" />
+                    style="height: 3vh; width: 3vh;" onclick="toggleWindow('extraWindow5', this)" />
                 <img src="images/musicnote.svg" class="taskbarbutton" alt="Main Window" style="height: 3vh; width: 3vh;"
-                    onclick="openWindow('musicWindow')" />
+                    onclick="toggleWindow('musicWindow', this)" />
                 <a href="https://dusqii.github.io"><img src="images/home.svg" class="taskbarbutton" alt="Main"
                         style="height: 3vh; width: 3vh;" /></a>
             </div>
+
+            <script>
+                function toggleWindow(windowId, button) {
+                    const windowElement = document.getElementById(windowId);
+                    if (windowElement.style.display === "block") {
+                        windowElement.style.display = "none";
+                        button.classList.remove("active");
+                    } else {
+                        windowElement.style.display = "block";
+                        button.classList.add("active");
+                    }
+                }
+            </script>
+
+            <style>
+                .taskbarbutton.active {
+                    border: 2px solid #00ff00;
+                    /* Example indicator style */
+                }
+            </style>
         </div>
         <div class="taskbar-right">
             <iframe class="taskbar-clock" src="https://free.timeanddate.com/clock/i9mcz53j/n805/fcfff/tct/pct/tt0/tb4"
