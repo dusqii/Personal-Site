@@ -244,19 +244,22 @@
         </div>
     </div>
 
-    <div class="popup">
-        <div class="window-header" id="extraWindowHeader5">
-            <span>achievements.docx</span>
-            <button onclick="closeWindow('extraWindow5')">
+    <div class="window notification popup" id="notification" style="width: fit-content; height: fit-content;">
+        <div class="window-header" id="notificationHeader">
+            <span>Microsoft Navigation Features</span>
+            <button onclick="closeWindow('notification')">
                 <img src="images/windows95x.png" style="height: 1.3em; width: 1.4em" />
             </button>
         </div>
-        <strong>Use the buttons on the taskbar below to navigate</strong>
-        <button style="background-color: green; color: white; padding: 0.25rem 0.5rem; cursor: pointer;" onclick="document.querySelector('.popup').remove();">
-            Ok
-        </button>
+        <div class="window-content">
+            <div class="main-content">
+                <strong style="text-align: center;">Use the buttons on the taskbar below to navigate</strong><br>
+                <button class="okbutton" onclick="document.querySelector('.notification').remove();">
+                    Ok
+                </button>
+            </div>
+        </div>
     </div>
-
 
     <script>
         document.querySelector('.footer-text button').addEventListener('click', () => {
@@ -280,10 +283,10 @@
                     onclick="toggleWindow('gifWindow', this)" />
                 <img src="images/toolbox.png" class="taskbarbutton" alt="Usefuls" style="height: 3vh; width: 3vh;"
                     onclick="toggleWindow('extraWindow4', this)" />
-                <img src="images/favorites.png" class="taskbarbutton" alt="favorite online stuffs"
+                <img src="images/favorites.png" class="taskbarbutton" alt="Favorite Online Stuffs"
                     style="height: 3vh; width: 3vh;" onclick="toggleWindow('extraWindow5', this)" />
-                <img src="images/musicnote.svg" class="taskbarbutton" alt="Main Window" style="height: 3vh; width: 3vh;"
-                    onclick="toggleWindow('musicWindow', this)" />
+                <img src="images/musicnote.svg" class="taskbarbutton" alt="Music Window"
+                    style="height: 3vh; width: 3vh;" onclick="toggleWindow('musicWindow', this)" />
                 <a href="https://dusqii.github.io"><img src="images/home.svg" class="taskbarbutton" alt="Main"
                         style="height: 3vh; width: 3vh;" /></a>
             </div>
@@ -294,17 +297,27 @@
                     if (windowElement.style.display === "block") {
                         windowElement.style.display = "none";
                         button.classList.remove("active");
+                        button.classList.remove("open");
                     } else {
                         windowElement.style.display = "block";
                         button.classList.add("active");
+                        button.classList.add("open");
                     }
                 }
             </script>
 
             <style>
-                .taskbarbutton.active {
-                    border: 2px solid #00ff00;
-                    /* Example indicator style */
+                .taskbarbutton {
+                    position: relative;
+                }
+
+                .taskbarbutton:hover .tooltip {
+                    visibility: visible;
+                    opacity: 1;
+                }
+
+                .taskbarbutton.open {
+                    border-bottom: 1px solid white;
                 }
             </style>
         </div>
