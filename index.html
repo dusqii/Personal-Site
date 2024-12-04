@@ -1,332 +1,306 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, orientation=landscape">
+		<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="css/index.css">
+	</head>
+	<style>
+		body {
+			background-size: auto;
+			background-repeat: no-repeat;
+		}
 
-<head>
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, orientation=landscape">
-    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/index.css">
-</head>
+		.main-window>.window-content>* {
+			margin-block: 0;
+		}
+	</style>
+	</head>
+	<div class="wallpaper">
+		<video src="images/background.mp4" autoplay muted loop style="object-fit: cover; width: 100vw; height: 100vh;"></video>
+	</div>
+	<body style="margin: 0; padding: 0; overflow: hidden;">
+		<div class="window main-window" id="mainWindow" style="width: fit-content; height: fit-content;">
+			<div class="window-header" id="mainWindowHeader">
+				<span>welcome-img.pdf</span>
+				<button onclick="closeWindow('mainWindow')">
+					<img src="images/windows95x.png" style="height: 1.3em; width: 1.4em" />
+				</button>
+			</div>
+			<div class="window-content Mali">
+				<div class="main-content">
+					<h1 style="font-size: 7vh;">Hi!!! ♡︎</h1>
+					<p style="font-size: 2vh;">My name is Jamie, regardless of how you've found my website, welcome.</p>
+				</div>
+				<img src="images/spinning-cat-maxwell.gif" alt="Maxwell spinning" style="width: 15vw; height: auto;">
+			</div>
+		</div>
+		<div class="window side-window extra-window" id="sideWindow" style="width: fit-content; height: fit-content;">
+			<div class="window-header" id="sideWindowHeader">
+				<span>socials.html</span>
+				<button onclick="closeWindow('sideWindow')">
+					<img src="images/windows95x.png" style="height: 1.3em; width: 1.4em" />
+				</button>
+			</div>
+			<div class="window-content">
+				<ul id="socials" style="list-style-type: none; display: grid; grid-template-columns: repeat(2, 1fr); margin-top:1vh;">
+					<li>
+						<a href="https://discordapp.com/users/614563014506578070">
+							<img src="images/discord.png" style="height: auto; width: 6vh;" />
+						</a>
+					</li>
+					<li>
+						<a href="https://steamcommunity.com/id/transfemininegaming">
+							<img src="images/steam.png" style="height: auto; width: 6vh;" />
+						</a>
+					</li>
+					<li>
+						<a href="https://en.pronouns.page/@duskybee">
+							<img src="images/pronouns.png" style="height: auto; width: 6vh;" />
+						</a>
+					</li>
+					<li>
+						<a href="https://backpack.tf/profiles/76561199229564370">
+							<img src="images/backpacktf.png" style="height: auto; width: 6vh;" />
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/dusqii">
+							<img src="images/github.svg" style="height: auto; width: 6vh;" />
+						</a>
+					</li>
+					<li>
+						<a href="https://namemc.com/profile/dusqii.1">
+							<img src="images/namemc.png" style="height: auto; width: 6vh;" />
+						</a>
+					</li>
+					<li>
+						<a href="https://www.roblox.com/users/583092861/profile">
+							<img src="images/roblox.png" style="height: auto; width: 5.6vh;" />
+						</a>
+					</li>
+					<li>
+						<a href="https://myanimelist.net/profile/dusqii">
+							<img src="images/MAL.png" style="height: auto; width: 6vh;" />
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="window extra-window" id="about-window" style="top: 20%; left: 20%; width: fit-content; height: fit-content;">
+			<div class="window-header" id="extraWindowHeader1">
+				<span>aboutme.rtf</span>
+				<button onclick="closeWindow('about-window')">
+					<img src="images/windows95x.png" style="height: 1.3em; width: 1.4em" />
+				</button>
+			</div>
+			<div class="window-content Mali">
+				<div class="abouthead" style="display: flex; justify-content: center">
+					<h1>Here's some about me</h1>
+					<img src="images/cirno.gif" alt="cirno spinny" style="width: 10vw; height: auto; margin-left: 20px" />
+				</div>
+				<ul style="list-style-type: none;">
+					<li>- She/Her, ISFP-T, Minor</li>
+					<li>- I live in Midwestern America, my timezone is EST.</li>
+					<li>- I do stupid things in games</li>
+					<li>- and I spread misinformation on the internet</li>
+					<li> - I'm also an amateur programmer and a decent artist/musician. </li>
+				</ul>
+			</div>
+		</div>
+		<div class="window extra-window" id="stuffILikeWindow" style="top: 30%; left: 50%">
+			<div class="window-header" id="extraWindowHeader2">
+				<span>interests.txt</span>
+				<button onclick="closeWindow('stuffILikeWindow')">
+					<img src="images/windows95x.png" style="height: 1.3em; width: 1.4em" />
+				</button>
+			</div>
+			<div class="window-content stuffILikeWindowContent Mali">
+				<h1>Things I Like</h1>
+				<blockquote> Anime - Top 4 - One Piece, Frieren, Bleach, Dragon Ball <br /> Current Games - Helldivers 2, Deep Rock Galactic, Roblox, TF2, Risk of Rain 2, ULTRAKILL <br /> Books - Favorites - Scythe, Spellslinger, Keeper of the Lost Cities, Ready Player One <br /> Music - I play cello (not rn) - I love Breakcore, JPop and Rock <br /> Art - Amateur 2D and 3D artist, decent at graphic and digital design <br /> Programming - Learning, I know HTML/CSS and have familiarity with Java, Javascript, LUA, general coding experience <br />
+				</blockquote>
+			</div>
+		</div>
+		<div class="window" id="gifWindow" style="top: 50%; left: 75%; overflow:hidden;">
+			<div class="window-header" id="extraWindowHeader3">
+				<span>sun.gif</span>
+				<button onclick="closeWindow('gifWindow')">
+					<img src="images/windows95x.png" style="height: 1.3em; width: 1.4em" />
+				</button>
+			</div>
+			<div class="window-content">
+				<img src="images/gif.gif" />
+			</div>
+		</div>
+		<div class="window extra-window" id="extraWindow4" style="top: 40%; left: 30%">
+			<div class="window-header" id="extraWindowHeader4">
+				<span>toolbox.html</span>
+				<button onclick="closeWindow('extraWindow4')">
+					<img src="images/windows95x.png" style="height: 1.3em; width: 1.4em" />
+				</button>
+			</div>
+			<div class="window-content toolwindow Mali" style="text-align:left;font-size:1.2em;">
+				<h1 style='text-align: center;'>Toolbox</h1>
+				<li>
+					<a href="https://cobalt.tools">
+						<img src="https://raw.githubusercontent.com/imputnet/cobalt/refs/heads/main/web/static/icons/generic.png" style="height:auto;width:4vh;" />cobalt.tools </a> - Nearly universal audio/video downloader
+				</li>
+				<li>
+					<a href="https://mangareader.to">
+						<img src="images/mangareader.jpg" style="height:auto;width:4vh;" />mangareader.to </a> - Manga site, updated consistently and constantly, use adblock
+				</li>
+				<li>
+					<a href="https://pronouns.page">
+						<img src="https://pronouns.page/favicon.ico" style="height:auto;width:4vh;" />pronouns.page </a> - Great site to use as an alternate about me, has a queer calendar, dictionary of gender-neutral terms, etc.
+				</li>
+				<li>
+					<a href="https://github.com/bloxstraplabs/bloxstrap">
+						<img src="https://bloxstrap.org/assets/bloxstrap.png" style="height:auto;width:4vh;" />bloxstrap </a> - A bootstrapper for roblox that lets you edit specific graphic settings, fast flags, add your own visual mods (fonts, ui elements), etc.
+				</li>
+				<li>
+					<a href="https://eaglercraft.com/">
+						<img src="images/eagler.png" style="height:auto;width:4vh;" />eaglercraft </a> - A free version of minecraft built in HTML, so it's cross-platform and doesn't require any downloads
+				</li>
+				<li>
+					<a href="https://rogold.live/">
+						<img src="https://rogold.live/favicon.ico" style="height:auto;width:4vh;" />rogold </a> - Probably (in my opinion) the best roblox extension out there right now
+				</li>
+				<li>
+					<a href="https://thunderstore.io/c/lethal-company/p/Kesomannen/GaleModManager/">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTtE0RhTu0znAff8OXaMZNG2H_271Bn01GYA&s" style="height:auto;width:4vh;" />Gale Mod Manager </a> - Free, open source mod manager and alternative to thunderstore's, for Unity games.
+				</li>
+			</div>
+		</div>
+		<div class="window extra-window" id="extraWindow5" style="top: 50%; left: 40%">
+			<div class="window-header" id="extraWindowHeader5">
+				<span>achievements.docx</span>
+				<button onclick="closeWindow('extraWindow5')">
+					<img src="images/windows95x.png" style="height: 1.3em; width: 1.4em" />
+				</button>
+			</div>
+			<div class="window-content Mali">
+				<h1>Stuff I've Done/Am Doing: </h1>
+				<ul style="list-style-type: none;">
+					<li>
+						<img src="images/checkboxfilled.svg" />CIW Site Development Associate
+					</li>
+					<li>
+						<img src="images/checkboxempty.svg" />CIW Internet Business Associate
+					</li>
+					<li>
+						<img src="images/checkboxempty.svg" />CIW Network Technology Certificate
+					</li>
+					<li>
+						<img src="images/checkboxfilled.svg" />Recreational Drone Pilot
+					</li>
+					<li>
+						<img src="images/checkboxempty.svg" />Lean Six Sigma Belts
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="window extra-window" id="musicWindow" style="top: 60%; left: 70%; width: 300px;">
+			<div class="window-header" id="musicWindowHeader">
+				<span>music-player.exe</span>
+				<button onclick="closeWindow('musicWindow')">
+					<img src="images/windows95x.png" style="height: 1.3em; width: 1.4em" />
+				</button>
+			</div>
+			<div class="window-content music-player">
+				<div class="player-info">
+					<img src="https://plaza.one/icons/apple-touch-icon.png?v=2208042" alt="Plaza Radio" class="station-image" />
+					<div class="station-info Mali">
+						<h3>Nightwave Plaza</h3>
+						<p>24/7 Vaporwave Radio</p>
+					</div>
+				</div>
+				<div class="player-controls">
+					<button class="control-btn" onclick="togglePlay()" id="playPauseBtn">
+						<img src="images/playpause.svg" alt="Play/Pause" id="playPauseIcon" />
+					</button>
+					<div class="volume-control">
+						<img src="images/volume.svg" alt="Volume" />
+						<input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1" />
+					</div>
+				</div>
+				<audio id="radioPlayer" src="http://radio.plaza.one/mp3" preload="none"></audio>
+			</div>
+		</div>
+		<div class="window notification popup" id="notification" style="width: fit-content; height: fit-content;">
+			<div class="window-header" id="notificationHeader">
+				<span>Microsoft Navigation Features</span>
+				<button onclick="closeWindow('notification')">
+					<img src="images/windows95x.png" style="height: 1.3em; width: 1.4em" />
+				</button>
+			</div>
+			<div class="window-content">
+				<div class="main-content">
+					<strong style="text-align: center;">Use the buttons on the taskbar below to navigate</strong>
+					<br>
+					<button class="okbutton" onclick="document.querySelector('.notification').remove();"> Ok </button>
+				</div>
+			</div>
+		</div>
+		<script>
+			document.querySelector('.footer-text button').addEventListener('click', () => {
+				document.querySelector('.footer-text').style.display = 'none';
+			});
+		</script>
+		<div class="taskbar">
+			<div class="taskbar-left"></div>
+			<div class="taskbar-center">
+				<div class="taskbarbuttons">
+					<img src="images/main.png" class="taskbarbutton" alt="Main Window" style="height: 3vh; width: 3vh;" onclick="toggleWindow('mainWindow', this)" />
+					<img src="images/groupadd.png" class="taskbarbutton" alt="Side Window" style="height: 3vh; width: 3vh;" onclick="toggleWindow('sideWindow', this)" />
+					<img src="images/desc.png" class="taskbarbutton" alt="About Window" style="height: 3vh; width: 3vh;" onclick="toggleWindow('about-window', this)" />
+					<img src="images/preferences.png" class="taskbarbutton" alt="Preferences Window" style="height: 3vh; width: 3vh;" onclick="toggleWindow('stuffILikeWindow', this)" />
+					<img src="images/sunset.png" class="taskbarbutton" alt="Gif Window" style="height: 3vh; width: 3vh;" onclick="toggleWindow('gifWindow', this)" />
+					<img src="images/toolbox.png" class="taskbarbutton" alt="Usefuls" style="height: 3vh; width: 3vh;" onclick="toggleWindow('extraWindow4', this)" />
+					<img src="images/favorites.png" class="taskbarbutton" alt="Favorite Online Stuffs" style="height: 3vh; width: 3vh;" onclick="toggleWindow('extraWindow5', this)" />
+					<img src="images/musicnote.svg" class="taskbarbutton" alt="Music Window" style="height: 3vh; width: 3vh;" onclick="toggleWindow('musicWindow', this)" />
+					<a href="https://dusqii.github.io">
+						<img src="images/home.svg" class="taskbarbutton" alt="Main" style="height: 3vh; width: 3vh;" />
+					</a>
+				</div>
+				<script>
+					function toggleWindow(windowId, button) {
+						const windowElement = document.getElementById(windowId);
+						if (windowElement.style.display === "block") {
+							windowElement.style.display = "none";
+							button.classList.remove("active");
+							button.classList.remove("open");
+						} else {
+							windowElement.style.display = "block";
+							button.classList.add("active");
+							button.classList.add("open");
+						}
+					}
+				</script>
+				<style>
+					.taskbarbutton {
+						position: relative;
+					}
 
-<style>
-    body {
-        background-image: url("images/wallpaper.gif");
-        background-size: auto;
-        background-repeat: no-repeat;
-    }
+					.taskbarbutton:hover .tooltip {
+						visibility: visible;
+						opacity: 1;
+					}
 
-    .main-window>.window-content>* {
-        margin-block: 0;
-    }
-</style>
-</head>
-
-<body style="margin: 0; padding: 0; overflow: hidden;">
-    <div class="window main-window" id="mainWindow" style="width: fit-content; height: fit-content;">
-        <div class="window-header" id="mainWindowHeader">
-            <span>welcome-img.pdf</span>
-            <button onclick="closeWindow('mainWindow')">
-                <img src="images/windows95x.png" style="height: 1.3em; width: 1.4em" />
-            </button>
-        </div>
-        <div class="window-content Mali">
-            <div class="main-content">
-                <h1 style="font-size: 7vh;">Hi!!! ♡︎</h1>
-                <p style="font-size: 2vh;">My name is Jamie, regardless of how you've found my website, welcome.</p>
-            </div>
-            <img src="images/plinK.gif" alt="plinK" style="width: 30vw; height: auto;">
-
-        </div>
-    </div>
-
-    <div class="window side-window extra-window" id="sideWindow" style="width: fit-content; height: fit-content;">
-        <div class="window-header" id="sideWindowHeader">
-            <span>socials.html</span>
-            <button onclick="closeWindow('sideWindow')">
-                <img src="images/windows95x.png" style="height: 1.3em; width: 1.4em" />
-            </button>
-        </div>
-        <div class="window-content">
-            <ul id="socials"
-                style="list-style-type: none; display: grid; grid-template-columns: repeat(2, 1fr); margin-top:1vh;">
-                <li>
-                    <a href="https://discordapp.com/users/614563014506578070"><img src="images/discord.png"
-                            style="height: auto; width: 6vh;" /></a>
-                </li>
-                <li>
-                    <a href="https://steamcommunity.com/id/transfemininegaming"><img src="images/steam.png"
-                            style="height: auto; width: 6vh;" /></a>
-                </li>
-                <li>
-                    <a href="https://en.pronouns.page/@duskybee"><img src="images/pronouns.png"
-                            style="height: auto; width: 6vh;" /></a>
-                </li>
-                <li>
-                    <a href="https://backpack.tf/profiles/76561199229564370"><img src="images/backpacktf.png"
-                            style="height: auto; width: 6vh;" /></a>
-                </li>
-                <li>
-                    <a href="https://github.com/dusqii"><img src="images/github.svg"
-                            style="height: auto; width: 6vh;" /></a>
-                </li>
-                <li>
-                    <a href="https://namemc.com/profile/dusqii.1"><img src="images/namemc.png"
-                            style="height: auto; width: 6vh;" /></a>
-                </li>
-                <li>
-                    <a href="https://www.roblox.com/users/583092861/profile"><img src="images/roblox.png"
-                            style="height: auto; width: 5.6vh;" /></a>
-                </li>
-                <li>
-                    <a href="https://myanimelist.net/profile/dusqii"><img src="images/MAL.png"
-                            style="height: auto; width: 6vh;" /></a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="window extra-window" id="about-window"
-        style="top: 20%; left: 20%; width: fit-content; height: fit-content;">
-        <div class="window-header" id="extraWindowHeader1">
-            <span>aboutme.rtf</span>
-            <button onclick="closeWindow('about-window')">
-                <img src="images/windows95x.png" style="height: 1.3em; width: 1.4em" />
-            </button>
-        </div>
-        <div class="window-content Mali">
-            <div class="abouthead" style="display: flex; justify-content: center">
-                <h1>Here's some about me</h1>
-                <img src="images/cirno.gif" alt="cirno spinny" style="width: 10vw; height: auto; margin-left: 20px" />
-            </div>
-            <ul style="list-style-type: none;">
-                <li>- She/Her, ISFP-T, Minor</li>
-                <li>- I live in Midwestern America, my timezone is EST.</li>
-                <li>- I do stupid things in games</li>
-                <li>- and I spread misinformation on the internet</li>
-                <li>
-                    - I'm also an amateur programmer and a decent artist/musician.
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="window extra-window" id="stuffILikeWindow" style="top: 30%; left: 50%">
-        <div class="window-header" id="extraWindowHeader2">
-            <span>interests.txt</span>
-            <button onclick="closeWindow('stuffILikeWindow')">
-                <img src="images/windows95x.png" style="height: 1.3em; width: 1.4em" />
-            </button>
-        </div>
-        <div class="window-content stuffILikeWindowContent Mali">
-            <h1>Things I Like</h1>
-            <blockquote>
-                Anime - Top 4 - One Piece, Frieren, Bleach, Dragon Ball <br />
-
-                Current Games - Helldivers 2, Deep Rock Galactic, Roblox, TF2, Risk of
-                Rain 2, ULTRAKILL <br />
-
-                Books - Favorites - Scythe, Spellslinger, Keeper of the Lost Cities,
-                Ready Player One <br />
-
-                Music - I play cello (not rn) - I love Breakcore, JPop and Rock <br />
-
-                Art - Amateur 2D and 3D artist, decent at graphic and digital design
-                <br />
-
-                Programming - Learning, I know HTML/CSS and have familiarity with
-                Java, Javascript, LUA, general coding experience <br />
-            </blockquote>
-        </div>
-    </div>
-
-    <div class="window extra-window" id="gifWindow" style="top: 45%; left: 65%; overflow:hidden;">
-        <div class="window-header" id="extraWindowHeader3">
-            <span>sun.gif</span>
-            <button onclick="closeWindow('gifWindow')">
-                <img src="images/windows95x.png" style="height: 1.3em; width: 1.4em" />
-            </button>
-        </div>
-        <div class="window-content">
-            <img src="images/gif.gif" />
-        </div>
-    </div>
-
-    <div class="window extra-window" id="extraWindow4" style="top: 40%; left: 30%">
-        <div class="window-header" id="extraWindowHeader4">
-            <span>toolbox.html</span>
-            <button onclick="closeWindow('extraWindow4')">
-                <img src="images/windows95x.png" style="height: 1.3em; width: 1.4em" />
-            </button>
-        </div>
-        <div class="window-content toolwindow Mali" style="text-align:left;">
-            <h1 style='text-align: center;'>Toolbox</h1>
-            <li><a href="https://cobalt.tools"><img
-                        src="https://raw.githubusercontent.com/imputnet/cobalt/refs/heads/main/web/static/icons/generic.png"
-                        style="height:auto;width:2vh;" />cobalt.tools</a> - Nearly universal audio/video downloader
-            </li>
-            <li><a href="https://mangareader.to"><img src="images/mangareader.jpg"
-                        style="height:auto;width:2vh;" />mangareader.to</a> - Manga site, updated consistently and
-                constantly,
-                use adblock</li>
-            <li><a href="https://pronouns.page"><img src="https://pronouns.page/favicon.ico"
-                        style="height:auto;width:2vh;" />pronouns.page</a> - Great site to use as an alternate about
-                me, has a
-                queer calendar, dictionary of gender-neutral terms, etc.</li>
-            <li><a href="https://github.com/bloxstraplabs/bloxstrap"><img
-                        src="https://bloxstrap.org/assets/bloxstrap.png" style="height:auto;width:20px;" />bloxstrap</a>
-                - A bootstrapper for roblox that lets
-                you edit specific graphic settings, fast flags, add your own visual mods (fonts, ui elements), etc.</li>
-            <li><a href="https://eaglercraft.com/"><img src="images/eagler.png"
-                        style="height:auto;width:2vh;" />eaglercraft</a> - A free version of minecraft built in HTML,
-                so it's
-                cross-platform and doesn't require any downloads</li>
-            <li><a href="https://rogold.live/"><img src="https://rogold.live/favicon.ico"
-                        style="height:auto;width:2vh;" />rogold</a> - Probably (in my opinion) the best roblox
-                extension out there
-                right now</li>
-            <li><a href="https://thunderstore.io/c/lethal-company/p/Kesomannen/GaleModManager/"><img
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTtE0RhTu0znAff8OXaMZNG2H_271Bn01GYA&s"
-                        style="height:auto;width:2vh;" />Gale Mod Manager</a> - Free, open source mod manager and
-                alternative to thunderstore's, for Unity games.</li>
-        </div>
-    </div>
-
-    <div class="window extra-window" id="extraWindow5" style="top: 50%; left: 40%">
-        <div class="window-header" id="extraWindowHeader5">
-            <span>achievements.docx</span>
-            <button onclick="closeWindow('extraWindow5')">
-                <img src="images/windows95x.png" style="height: 1.3em; width: 1.4em" />
-            </button>
-        </div>
-        <div class="window-content Mali">
-            <h1>Stuff I've Done/Am Doing: </h1>
-            <ul style="list-style-type: none;">
-                <li><img src="images/checkboxfilled.svg" />CIW Site Development Associate</li>
-                <li><img src="images/checkboxempty.svg" />CIW Internet Business Associate</li>
-                <li><img src="images/checkboxempty.svg" />CIW Network Technology Certificate</li>
-                <li><img src="images/checkboxfilled.svg" />Recreational Drone Pilot</li>
-                <li><img src="images/checkboxempty.svg" />Lean Six Sigma Belts</li>
-            </ul>
-        </div>
-    </div>
-    <div class="window extra-window" id="musicWindow" style="top: 60%; left: 70%; width: 300px;">
-        <div class="window-header" id="musicWindowHeader">
-            <span>music-player.exe</span>
-            <button onclick="closeWindow('musicWindow')">
-                <img src="images/windows95x.png" style="height: 1.3em; width: 1.4em" />
-            </button>
-        </div>
-        <div class="window-content music-player">
-            <div class="player-info">
-                <img src="https://plaza.one/icons/apple-touch-icon.png?v=2208042" alt="Plaza Radio"
-                    class="station-image" />
-                <div class="station-info Mali">
-                    <h3>Nightwave Plaza</h3>
-                    <p>24/7 Vaporwave Radio</p>
-                </div>
-            </div>
-            <div class="player-controls">
-                <button class="control-btn" onclick="togglePlay()" id="playPauseBtn">
-                    <img src="images/playpause.svg" alt="Play/Pause" id="playPauseIcon" />
-                </button>
-                <div class="volume-control">
-                    <img src="images/volume.svg" alt="Volume" />
-                    <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1" />
-                </div>
-            </div>
-            <audio id="radioPlayer" src="http://radio.plaza.one/mp3" preload="none"></audio>
-        </div>
-    </div>
-
-    <div class="window notification popup" id="notification" style="width: fit-content; height: fit-content;">
-        <div class="window-header" id="notificationHeader">
-            <span>Microsoft Navigation Features</span>
-            <button onclick="closeWindow('notification')">
-                <img src="images/windows95x.png" style="height: 1.3em; width: 1.4em" />
-            </button>
-        </div>
-        <div class="window-content">
-            <div class="main-content">
-                <strong style="text-align: center;">Use the buttons on the taskbar below to navigate</strong><br>
-                <button class="okbutton" onclick="document.querySelector('.notification').remove();">
-                    Ok
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        document.querySelector('.footer-text button').addEventListener('click', () => {
-            document.querySelector('.footer-text').style.display = 'none';
-        });
-    </script>
-
-    <div class="taskbar">
-        <div class="taskbar-left"></div>
-        <div class="taskbar-center">
-            <div class="taskbarbuttons">
-                <img src="images/main.png" class="taskbarbutton" alt="Main Window" style="height: 3vh; width: 3vh;"
-                    onclick="toggleWindow('mainWindow', this)" />
-                <img src="images/groupadd.png" class="taskbarbutton" alt="Side Window" style="height: 3vh; width: 3vh;"
-                    onclick="toggleWindow('sideWindow', this)" />
-                <img src="images/desc.png" class="taskbarbutton" alt="About Window" style="height: 3vh; width: 3vh;"
-                    onclick="toggleWindow('about-window', this)" />
-                <img src="images/preferences.png" class="taskbarbutton" alt="Preferences Window"
-                    style="height: 3vh; width: 3vh;" onclick="toggleWindow('stuffILikeWindow', this)" />
-                <img src="images/sunset.png" class="taskbarbutton" alt="Gif Window" style="height: 3vh; width: 3vh;"
-                    onclick="toggleWindow('gifWindow', this)" />
-                <img src="images/toolbox.png" class="taskbarbutton" alt="Usefuls" style="height: 3vh; width: 3vh;"
-                    onclick="toggleWindow('extraWindow4', this)" />
-                <img src="images/favorites.png" class="taskbarbutton" alt="Favorite Online Stuffs"
-                    style="height: 3vh; width: 3vh;" onclick="toggleWindow('extraWindow5', this)" />
-                <img src="images/musicnote.svg" class="taskbarbutton" alt="Music Window"
-                    style="height: 3vh; width: 3vh;" onclick="toggleWindow('musicWindow', this)" />
-                <a href="https://dusqii.github.io"><img src="images/home.svg" class="taskbarbutton" alt="Main"
-                        style="height: 3vh; width: 3vh;" /></a>
-            </div>
-
-            <script>
-                function toggleWindow(windowId, button) {
-                    const windowElement = document.getElementById(windowId);
-                    if (windowElement.style.display === "block") {
-                        windowElement.style.display = "none";
-                        button.classList.remove("active");
-                        button.classList.remove("open");
-                    } else {
-                        windowElement.style.display = "block";
-                        button.classList.add("active");
-                        button.classList.add("open");
-                    }
-                }
-            </script>
-
-            <style>
-                .taskbarbutton {
-                    position: relative;
-                }
-
-                .taskbarbutton:hover .tooltip {
-                    visibility: visible;
-                    opacity: 1;
-                }
-
-                .taskbarbutton.open {
-                    border-bottom: 1px solid white;
-                }
-            </style>
-        </div>
-        <div class="taskbar-right">
-            <iframe class="taskbar-clock" src="https://free.timeanddate.com/clock/i9mcz53j/n805/fcfff/tct/pct/tt0/tb4"
-                frameborder="0" width="213" height="36" allowtransparency="true"></iframe>
-        </div>
-    </div>
-    <script src="js/index.js" defer></script>
-</body>
-
+					.taskbarbutton.open {
+						border-bottom: 1px solid white;
+					}
+				</style>
+			</div>
+			<div class="taskbar-right">
+				<a href="https://time.is/EST">
+					<iframe src="https://free.timeanddate.com/clock/i9mcz53j/n179/fcfff/tct/pct/tt0/tb4" frameborder="0" width="213" height="36" allowtransparency="true"></iframe>
+					</iframe>
+				</a>
+			</div>
+		</div>
+		<script src="js/index.js" defer></script>
+	</body>
 </html>
